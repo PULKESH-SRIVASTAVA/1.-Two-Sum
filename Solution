@@ -1,0 +1,16 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer,Integer> map=new HashMap();
+        for(int i=0;i<nums.length;i++){
+            if(map.containsKey(target-nums[i])){//check if we have another element that sums up to target
+                return new int[]{map.get(target-nums[i]),i};//if there is then we have a pair.Return their indexes
+            }
+                else
+                   map.put(nums[i],i); // if the element is not present or there is no pair then add it to the map
+            }
+        return new int[0];//return if we have no pair
+        }
+    }
+	
+	// T- O(n) for the traversal of array
+	// S- O(n) for hashmap
